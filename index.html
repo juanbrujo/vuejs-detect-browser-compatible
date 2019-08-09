@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detect if VueJS is Compatible</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+  <div id="app">
+    <p>{{ message }}</p>
+  </div>
+
+  <script>
+    var compatibleBrowser = typeof Object['__defineSetter__'] === 'function'
+    var elem = document.createElement('div')
+    document.body.appendChild(elem)
+    elem.innerHTML = 'Is VueJS compatible with this browser? ' + compatibleBrowser
+  </script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue.js!'
+      }
+    })
+  </script>
+  
+</body>
+</html>
